@@ -59,3 +59,21 @@ class TestUserList(RetrieveAPIView):
          "message":"",
          "content": data.data
       })
+
+
+class TestUserSavePdfView(RetrieveAPIView):
+   serializer_class = TestUserSerializer
+   queryset = TestUserModel.objects.all()
+
+   def get(self, request, id):
+      test_user = self.get_queryset().get(pk=id)
+      data = self.serializer_class(instance=test_user)                
+      template = get_template('test_user.html')
+      html = template.render(data.data)
+
+      pdfkit.from_string(html, 'miapp/static/pdf/test_user.pdf')
+      return JsonResponse({"message":
+         'PDF Creado', "content":
+         'Por Mario Medina'}) 
+      
+   
