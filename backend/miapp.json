@@ -1,0 +1,1 @@
+[{"model": "miapp.testusermodel", "pk": 1, "fields": {"testUserName": "MARIO ALEXANDER"}}, {"model": "miapp.testusermodel", "pk": 2, "fields": {"testUserName": "WILFREDO PALOMINO"}}, {"model": "miapp.testusermodel", "pk": 3, "fields": {"testUserName": "GENARO SALAS"}}]
